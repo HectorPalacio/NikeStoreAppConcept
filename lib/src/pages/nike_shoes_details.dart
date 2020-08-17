@@ -139,12 +139,10 @@ class NikeShoesDetails extends StatelessWidget {
                       Spacer(),
                       Padding(
                         padding: const EdgeInsets.only(top: 50.0),
-                        child: FloatingActionButton.extended(
-                          label: Text('ADD TO CART'),
-                          elevation: 0.0,
+                        child: FloatingActionButton(
                           heroTag: 'fav_2',
                           backgroundColor: Colors.black,
-                          icon: Icon(Icons.shopping_cart),
+                          child: Icon(Icons.shopping_cart),
                           onPressed: () {
                             _openShoppingCart(context);
                           },
