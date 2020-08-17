@@ -18,8 +18,10 @@ class NikeShoesItem extends StatefulWidget {
 }
 
 class _NikeShoesItemState extends State<NikeShoesItem> {
+  final _saved = Set<NikeShoes>();
   @override
   Widget build(BuildContext context) {
+    final alreadySaved = _saved.contains(widget.shoesItem);
     const itemHeight = 220.0;
     return InkWell(
       onTap: widget.onTap,
@@ -77,9 +79,21 @@ class _NikeShoesItemState extends State<NikeShoesItem> {
               Positioned(
                 bottom: 20,
                 left: 20,
-                child: Icon(
-                  Icons.favorite_border,
-                  color: Colors.grey,
+                child: InkWell(
+                  child: Icon(
+                    alreadySaved ? Icons.favorite : Icons.favorite_border,
+                    color: alreadySaved ? Colors.red : null,
+                  ),
+                  onTap: () {
+                    setState(() {
+                      print(widget.shoesItem.model);
+                      if (alreadySaved) {
+                        _saved.remove(widget.shoesItem);
+                      } else {
+                        _saved.add(widget.shoesItem);
+                      }
+                    });
+                  },
                 ),
               ),
               Positioned(
