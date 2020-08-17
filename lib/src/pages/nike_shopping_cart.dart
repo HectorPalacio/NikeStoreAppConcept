@@ -9,7 +9,6 @@ const _imageSize = 160.0;
 
 class NikeShoppingCart extends StatefulWidget {
   final NikeShoes shoes;
-
   const NikeShoppingCart({Key key, @required this.shoes}) : super(key: key);
 
   @override
@@ -28,14 +27,18 @@ class _NikeShoppingCartState extends State<NikeShoppingCart>
   void initState() {
     _controller = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 2000));
+
     _animationResize = Tween(begin: 1.0, end: 0.0).animate(
         CurvedAnimation(parent: _controller, curve: Interval(0.0, 0.2)));
+
     _animationMovementIn = Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
         parent: _controller,
         curve: Interval(0.3, 0.6, curve: Curves.fastLinearToSlowEaseIn)));
+
     _animationMovementOut = Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
         parent: _controller,
         curve: Interval(0.6, 1.0, curve: Curves.bounceIn)));
+
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         Navigator.of(context).pop();

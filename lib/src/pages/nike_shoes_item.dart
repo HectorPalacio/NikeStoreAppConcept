@@ -3,7 +3,7 @@ import 'package:nike_store_concept/src/entity/nike_shoe.dart';
 
 import 'nike_shopping_cart.dart';
 
-class NikeShoesItem extends StatelessWidget {
+class NikeShoesItem extends StatefulWidget {
   final NikeShoes shoesItem;
   final VoidCallback onTap;
 
@@ -12,11 +12,17 @@ class NikeShoesItem extends StatelessWidget {
     this.shoesItem,
     this.onTap,
   }) : super(key: key);
+
+  @override
+  _NikeShoesItemState createState() => _NikeShoesItemState();
+}
+
+class _NikeShoesItemState extends State<NikeShoesItem> {
   @override
   Widget build(BuildContext context) {
     const itemHeight = 220.0;
     return InkWell(
-      onTap: onTap,
+      onTap: widget.onTap,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 15.0),
         child: SizedBox(
@@ -26,11 +32,11 @@ class NikeShoesItem extends StatelessWidget {
             children: [
               Positioned.fill(
                 child: Hero(
-                  tag: 'background_${shoesItem.model}',
+                  tag: 'background_${widget.shoesItem.model}',
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
-                      color: Color(shoesItem.color),
+                      color: Color(widget.shoesItem.color),
                     ),
                   ),
                 ),
@@ -38,14 +44,14 @@ class NikeShoesItem extends StatelessWidget {
               Align(
                 alignment: Alignment.topCenter,
                 child: Hero(
-                  tag: 'number_${shoesItem.model}',
+                  tag: 'number_${widget.shoesItem.model}',
                   child: SizedBox(
                     height: itemHeight * 0.6,
                     child: Material(
                       color: Colors.transparent,
                       child: FittedBox(
                         child: Text(
-                          shoesItem.modelNumber.toString(),
+                          widget.shoesItem.modelNumber.toString(),
                           style: TextStyle(
                             color: Colors.black.withOpacity(0.05),
                             fontWeight: FontWeight.bold,
@@ -61,9 +67,9 @@ class NikeShoesItem extends StatelessWidget {
                 left: 100,
                 height: itemHeight * 0.65,
                 child: Hero(
-                  tag: 'image_${shoesItem.model}',
+                  tag: 'image_${widget.shoesItem.model}',
                   child: Image.asset(
-                    shoesItem.images.first,
+                    widget.shoesItem.images.first,
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -81,7 +87,7 @@ class NikeShoesItem extends StatelessWidget {
                 right: 20,
                 child: InkWell(
                   onTap: () {
-                    _openShoppingCart(context, shoesItem);
+                    _openShoppingCart(context, widget.shoesItem);
                   },
                   child: Icon(
                     Icons.add_shopping_cart,
@@ -98,14 +104,14 @@ class NikeShoesItem extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      shoesItem.model,
+                      widget.shoesItem.model,
                       style: TextStyle(color: Colors.grey),
                     ),
                     const SizedBox(
                       height: 2,
                     ),
                     Text(
-                      '\$${shoesItem.oldPrice.toInt().toString()}',
+                      '\$${widget.shoesItem.oldPrice.toInt().toString()}',
                       style: TextStyle(
                         color: Colors.red,
                         decoration: TextDecoration.lineThrough,
@@ -115,7 +121,7 @@ class NikeShoesItem extends StatelessWidget {
                       height: 5,
                     ),
                     Text(
-                      '\$${shoesItem.currentPrice.toInt().toString()}',
+                      '\$${widget.shoesItem.currentPrice.toInt().toString()}',
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
