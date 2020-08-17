@@ -50,9 +50,6 @@ class NikeShoesStoreHome extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     Expanded(
-                      child: Icon(Icons.home),
-                    ),
-                    Expanded(
                       child: Icon(Icons.search),
                     ),
                     Expanded(
