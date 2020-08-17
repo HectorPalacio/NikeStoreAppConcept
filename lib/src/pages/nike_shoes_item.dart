@@ -119,7 +119,8 @@ class _NikeShoesItemState extends State<NikeShoesItem> {
                   children: [
                     Text(
                       widget.shoesItem.model,
-                      style: TextStyle(color: Colors.grey),
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(
                       height: 2,

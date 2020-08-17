@@ -28,7 +28,7 @@ final shoes = <NikeShoes>[
         'assets/nike_shoes_store/shoes1_3.png'
       ],
       modelNumber: 90,
-      color: 0xFFF6F6F6,
+      color: 0xFFf5f5f5,
       description:
           'The Nike Air Force 1 07 High is a testament to the tried-and-true perfection of this style\'s legacy.'),
   NikeShoes(
@@ -41,7 +41,7 @@ final shoes = <NikeShoes>[
         'assets/nike_shoes_store/shoes2_3.png'
       ],
       modelNumber: 95,
-      color: 0xFFFCF5EB,
+      color: 0xFFebd8f3,
       description:
           'Named for a fish that can breathe both in the water and on land, the Nike Air Max 270 Bowfin Men’s Shoe epitomizes versatility by combining elements of trail shoes and water moccasins. It pushes this utility-inspired look into the future with the addition of Nike’s largest Max Air unit.'),
   NikeShoes(
@@ -54,7 +54,7 @@ final shoes = <NikeShoes>[
         'assets/nike_shoes_store/shoes3_3.png'
       ],
       modelNumber: 270,
-      color: 0xFFFEF7EB,
+      color: 0xFFf3d8d8,
       description:
           'The Jordan 1 Mid SE Multicolor is a brand-new iteration of the classic Nike Air silhouette that has been a huge success since its introduction in 1985 alongside the high and low top versions. The Air Jordan 1 was Michael Jordan’s first ever signature shoe with Nike, and is often regarded as the best shoe of all time.'),
   NikeShoes(
@@ -67,7 +67,7 @@ final shoes = <NikeShoes>[
         'assets/nike_shoes_store/shoes4_3.png'
       ],
       modelNumber: 98,
-      color: 0xFFEDF3FE,
+      color: 0xFFf5f5f5,
       description:
           'The Air Force 1 has defined shoe culture since the moment it stepped onto the court. And it continues to be a fashion staple thanks to clean lines, a strong midsole, and new and classic colorways in low, mid and high-top styles.'),
 ];
