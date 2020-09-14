@@ -6,6 +6,8 @@ import 'package:nike_store_concept/src/widgets/shake_transition.dart';
 class NikeShoesDetails extends StatelessWidget {
   final NikeShoes shoes;
   final ValueNotifier<bool> notifierButtomsVisible = ValueNotifier(false);
+  //final ValueNotifier<bool> notifierButtomsVisible = ValueNotifier(false);
+  //Ajustando la cabezara
 
   NikeShoesDetails({Key key, @required this.shoes}) : super(key: key);
 
