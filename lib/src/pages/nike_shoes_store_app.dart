@@ -26,6 +26,7 @@ class NikeShoesStoreHome extends StatelessWidget {
                   ),
                   Expanded(
                     child: ListView.builder(
+                      physics: BouncingScrollPhysics(),
                       itemCount: shoes.length,
                       padding: const EdgeInsets.only(bottom: 40),
                       itemBuilder: (context, index) {
@@ -33,8 +34,7 @@ class NikeShoesStoreHome extends StatelessWidget {
                         return NikeShoesItem(
                           shoesItem: shoesItem,
                           onTap: () {
-                            _onShoesPressed(
-                                shoesItem, context, notifierBottomBarVisible);
+                            _onShoesPressed(shoesItem, context, notifierBottomBarVisible);
                           },
                         );
                       },
